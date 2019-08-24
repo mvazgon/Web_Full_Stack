@@ -1,1 +1,18 @@
+# este docker file es para versiones 5.6.40 
+FROM debian:9
+
+MAINTAINER Manuel Vázquez "manuel.vazquez.gonzalez@hotmail.com"
+
+RUN apt update && \
+	apt upgrade -y && \
+	apt install ca-certificates apt-transport-https locales wget gnupg2 gnupg1 -y && \
+	localedef -i es_ES -c -f UTF-8 -A /usr/share/locale/locale.alias es_ES.UTF-8
+ENV LANG es_ES.utf8 
+RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \ 
+	echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list && \
+	apt update && \
+	apt install -y apache2 php7.1
+COPY index.php /var/www/html/
+RUN chown www-data: /var/www/html/index.php
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
