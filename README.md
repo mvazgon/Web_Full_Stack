@@ -9,4 +9,6 @@ toda una web de Wordpress, en principio, con el siguiente nivel de detalle:
     b. Tendrá Php en la versión requerida mínima de las aplicaciones web que ejecute el core de la aplicación o la necesaria para los plugin de la misma, 
     c. montará un volumen donde se localizará los archivos con el Core de la aplicación Web, los archivos de imágenes y contenidos, 
 No incluimos en este Stack el backend de MySQL ya que es mejor que haya un servicio, local o en otro nodo, exclusivamente dedicadoa estos menesteres de almacenamiento,backup y restore de datos de las diferentes bases de datos. 
-El objetivo es que 
+El objetivo es que pueda crear un stack de container para gestionar los hostings de CMS con Varnish y SSL.
+Primer Objetivo:
+1. crear los Dockerfiles para instalar: Apache 2.4 y Php(5.6-7.4) ; en debian 8 y 9 para posteriormente hacer las pruebas de Wordpress.
