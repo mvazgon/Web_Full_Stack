@@ -12,3 +12,4 @@ No incluimos en este Stack el backend de MySQL ya que es mejor que haya un servi
 El objetivo es que pueda crear un stack de container para gestionar los hostings de CMS con Varnish y SSL.
 Primer Objetivo:
 1. crear los Dockerfiles para instalar: Apache 2.4 y Php(5.6-7.4) ; en debian 8 y 9 para posteriormente hacer las pruebas de Wordpress.
+2. crear el Dockerfile de la última versión de Varnish para incluir las reglas para poder gestionar las peticiones del backend con Wordpres(Apache y Php)

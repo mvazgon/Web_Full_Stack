@@ -1,1 +1,1 @@
-Dockerfile-Apache-7.4
+Dockerfile-Varnish
