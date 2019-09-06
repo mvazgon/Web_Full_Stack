@@ -1,1 +1,12 @@
+FROM debian:9
+
+RUN apt update && apt upgrade -y && apt install -y wget gnupg apt-transport-https curl debian-archive-keyring 
+
+RUN wget https://packagecloud.io/varnishcache/varnish62/gpgkey -O /tmp/gpg.key && apt-key add /tmp/gpg.key
+
+RUN echo "deb https://packagecloud.io/varnishcache/varnish62/debian/ stretch main " > /etc/apt/sources.list.d/varnishcache_varnish62.list
+
+RUN apt update && apt upgrade -y 
+
+RUN apt install -y varnish
 
