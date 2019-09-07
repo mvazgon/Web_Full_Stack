@@ -12,7 +12,5 @@ RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \
 	echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list && \
 	apt update && \
 	apt install -y apache2 php7.2
-COPY index.php /var/www/html/
-RUN chown www-data: /var/www/html/index.php
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 

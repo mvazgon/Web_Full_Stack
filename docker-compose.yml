@@ -1,1 +1,15 @@
-version: "3"
+
+web5.6:
+   image: apache5.6/prueba01
+   volumes:
+      - wordpress:/var/www/html
+   ports:
+      - "8080:80"
+
+web7.0:
+   image: apache7.0/prueba02
+   volumes:
+     - wordpress:/var/www/html
+   ports:
+     - "8081:80"
+
