@@ -11,6 +11,8 @@ ENV LANG es_ES.utf8
 RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \ 
 	echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list && \
 	apt update && \
-	apt install -y apache2 php7.4
+	apt install -y apache2 php7.4 php7.4 php7.4-mysql php7.4-curl php7.4-gd php7.4-mbstring php7.4-xml php7.4-xmlrpc php7.4-soap php7.4-intl php7.4-zip
+RUN rm /var/www/html/index.html
+COPY ./wordpress/ /var/www/html/
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 

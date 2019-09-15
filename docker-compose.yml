@@ -1,15 +1,44 @@
+version: "2.0"
+services:
 
-web5.6:
-   image: apache5.6/prueba01
-   volumes:
-      - wordpress:/var/www/html
-   ports:
+  web5.6:
+    image: apache5.6/prueba01
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress5.6:/var/www/html
+    ports:
       - "8080:80"
 
-web7.0:
-   image: apache7.0/prueba02
-   volumes:
-     - wordpress:/var/www/html
-   ports:
-     - "8081:80"
+  web7.0:
+    image: apache7.0/prueba02
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress7.0:/var/www/html
+    ports:
+      - "8081:80"
 
+  web7.1:
+    image: apache7.1/prueba01
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress7.1:/var/www/hmtl
+    ports:
+      - "8082:80"
+
+  web7.2:
+    image: apache7.2/prueba01
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress7.2:/var/www/hmtl
+    ports:
+      - "8083:80"
+
+  web7.3:
+    image: apache7.3/prueba01
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress7.3:/var/www/hmtl
+    ports:
+      - "8084:80"
+
+  web7.4:
+    image: apache7.4/prueba01
+    volumes:
+      - /home/mvazquez/git/Web_Full_Stack/wordpress7.4:/var/www/hmtl
+    ports:
+      - "8085:80"
